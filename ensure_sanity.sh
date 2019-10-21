@@ -8,7 +8,7 @@ MY_TMP="$(mktemp -dt tmp.XXXX)"
 
 ensure_solution () {
 	case $1 in
-		*.java) printf "cd solutions; java $(javac -verbose $1 2>&1| tail -2 | head -1 | sed 's#.*solutions/\(.*\)\.class.*#\1#')";;
+		*.java) printf "cd solutions; java $(javac -verbose $1 2>&1 | tail -2 | head -1 | sed 's#.*solutions/\(.*\)\.class.*#\1#')";;
 		*.c) gcc -O3 $solution -o solutions/solution_c; printf "solutions/solution_c";;
 		*.hs) ghc -O3 -outputdir "$MY_TMP" $solution -o solutions/solution_hs >/dev/null
 			printf "solutions/solution_hs"
