@@ -19,7 +19,7 @@ The number of tries to be sure the papers are in the right order.
 
 ## Constraints
 
-$0 \le n \le 50000$
+$1 \le n \le 50000$
 
 ### Sample Input 0
 ```
@@ -71,17 +71,17 @@ at least one student gets the right grade.
 
 ### Sample Input 2
 ```
-0
+1
 ```
 
 ### Sample Output 2
 ```
-0
+1
 ```
 
 ### Explanation of Sample 2
 
-If there are no papers, Dr. Girardi does not have to put them in order.
+If there is only 1 paper, Dr. Girardi will always give the right grade on the first try.
 
 ## Language Note
 
