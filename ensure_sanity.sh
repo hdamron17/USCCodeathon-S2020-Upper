@@ -15,8 +15,8 @@ ensure_solution () {
 			rm -rf "$MY_TMP";;
 		*.rs) if [ -e solutions/Cargo.toml ]; then
 			cd solutions
-			#ln -sf target/release/solution_rs
-			OUT_DIR=. cargo build --release
+			ln -sf target/release/solution_rs
+			cargo build --release
 		else
 			rustc -O $solution -o solutions/solution_rs
 		fi
