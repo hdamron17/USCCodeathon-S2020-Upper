@@ -1,0 +1,5 @@
+* Steiner ellipse for triangle
+* Something with squares modulo p using quadratic residue since p is prime
+* Count domino tilings (for added complexity, calculate all on cube)
+* Calculate value after applying [Kaprekar’s routine](https://en.wikipedia.org/wiki/Kaprekar%27s_routine) many times
+* Special case of muffin problem - maximize size of smallest piece when splitting m muffins equally among s people
