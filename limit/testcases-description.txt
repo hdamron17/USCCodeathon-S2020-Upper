@@ -1,0 +1,7 @@
+00 - f(x) = y at three points and error bounds do not extend past local extrema
+01 - f(x) = y at three points but error bounds extend past one local extremum
+02 - f(x) = y at one point and there are no local extrema (and no flat points whatsoever)
+03 - f(x) = y at one point and there are no local extrema (but there is a flat point)
+04 - f(x) = y at one point and there are local extrema but error bounds do not include them
+05 - f(x) = y at one point and error bounds include one local extremum
+06 - f(x) = y at one point and error bounds include both local extrema
