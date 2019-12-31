@@ -1,0 +1,12 @@
+4 9 6
+Columbia Charlotte Raleigh Charleston
+Charleston Charlotte 99
+Columbia Charleston 12
+Charlotte Columbia 4
+Charlotte Raleigh 56
+Columbia Raleigh 76
+Charleston Columbia 73
+Raleigh Charlotte 46
+Columbia Charlotte 95
+Charlotte Charleston 98
+Charleston Raleigh Charlotte Charleston Charlotte Columbia

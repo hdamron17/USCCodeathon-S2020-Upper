@@ -4,9 +4,6 @@ INF = float('inf')
 def getLine(func):
     return list(map(func, input().split()))
 
-def copyList(listy):
-    return [listy[i] for i in range(len(listy))]
-
 def getEdge():
     l = input().split()
     na = l[0]
@@ -43,32 +40,32 @@ def dijkstras(graph, source):
                     dist[node] = alt
     return dist
 
+if __name__ == "__main__":
+    # Input problem
+    line = getLine(int)
+    n = line[0]
+    m = line[1]
+    k = line[2]
+    nodes = getLine(str)
+    edges = [getEdge() for _ in range(m)]
+    path = getLine(str)
 
-# Input problem
-line = getLine(int)
-n = line[0]
-m = line[1]
-k = line[2]
-nodes = getLine(str)
-edges = [getEdge() for _ in range(m)]
-path = getLine(str)
 
+    # Make Adjacency Matrix
+    graph = [[None for _ in range(n)] for _ in range(n)]
+    makeGraph(nodes, edges, graph)
 
-# Make Adjacency Matrix
-graph = [[None for _ in range(n)] for _ in range(n)]
-makeGraph(nodes, edges, graph)
+    # Make precomputed Dijkstras Matrix
+    efficientGraph = [dijkstras(graph, i) for i in range(n)]
 
-# Make precomputed Dijkstras Matrix
-efficientGraph = [dijkstras(graph, i) for i in range(n)]
+    # Calculate Costs
+    cost = 0
 
-# Calculate Costs
-cost = 0
-
-prev = path[0]
-cost = 0
-for next_ in path:
-    i = nodes.index(prev)
-    j = nodes.index(next_)
-    cost += efficientGraph[i][j]
-    prev = next_
-print(cost)
+    prev = path[0]
+    cost = 0
+    for next_ in path:
+        i = nodes.index(prev)
+        j = nodes.index(next_)
+        cost += efficientGraph[i][j]
+        prev = next_
+    print(cost)
