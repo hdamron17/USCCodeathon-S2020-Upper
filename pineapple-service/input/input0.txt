@@ -1,0 +1,6 @@
+3 3 3
+Columbia_Hall Preston Rusell_House
+Columbia_Hall Preston 11
+Columbia_Hall Rusell_House 9
+Preston Rusell_House 8
+Columbia_Hall Preston Rusell_House
