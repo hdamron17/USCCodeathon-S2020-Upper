@@ -42,6 +42,7 @@ In this example, we are trying to build a row of 16 legos with legos of lengths 
 {1,1,1,5}
 {1,1,3,3}
 {3,5}
+```
 
 ## Sample Output 1
 
