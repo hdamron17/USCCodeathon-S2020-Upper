@@ -35,3 +35,6 @@ if __name__ == "__main__":
         with open(ifname, 'w+') as ifile, open(ofname, 'w+') as ofile:
             ifile.write(sample + '\n')
             ofile.write(r + '\n')
+
+    import os
+    os.system("zip -r kaprekar-testcases.zip testcases")
