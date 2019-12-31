@@ -1,10 +1,10 @@
-# Lego Levels
+# Lego Combinations
 
-You have come up with a design for the new dorms to be built at USC. However to save costs, the buildings will be made of legos. The issue they ran into, is it would take the student builders too long to get the correct lengths. So they asked you to write a program to solve it.
+You are in charge of distributing legos for projects. However you need to know all the combinations of legos that can be made from a certain combination of lego lengths.
 
 ## Description
 
-Given a length for a row of legos, solve how the minimum number of legos it will take to build this row of length n.
+Given a length `n`, find the number of combinations of `l_0 l_1 l_2 ... l_k` that will combine to make length bricks of `n`.
 
 ## Input
 
@@ -23,38 +23,28 @@ $$ 0 < k \leq 25 $$
 
 ## Output
 
-Print the minimum number of legos needed to create a length $n$ row of legos. If the combination is not possible print `-1`.
+Print the total number of combinations of legos that create a length $n$ row of legos. It is guaranteed there is at least one combination that add up to n(the empty set is a combination).
 
 ## Sample Input 1
 
 ```
-16
+8 3
 1 3 5
 ```
 
 ### Explanation
 
-In this example, we are trying to build a row of 16 legos with legos of lengths 1, 3, and 5. The minimum in this example is 16. The solution is `3 x 5 + 1 x 1`. 3 legos of length 5, and 1 lego of length 1.
+In this example, we are trying to build a row of 16 legos with legos of lengths 1, 3, and 5. The combinations that can be made are:  
+
+```
+{1,1,1,1,1,1,1,1}
+{1,1,1,1,1,3}
+{1,1,1,5}
+{1,1,3,3}
+{3,5}
 
 ## Sample Output 1
 
 ```
-4
-```
-
-## Sample Input 2
-
-```
-30 2
-4 25
-```
-
-### Explanation
-
-In this example, we are trying to build a row of 30 with legos of length 4, and 25. There does not exist a combination of 4s and 25 that add up to 30, thus it is impossible, we ouput `-1`.
-
-## Sample Output 2
-
-```
--1
+5
 ```
