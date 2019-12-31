@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from math import isclose
 from cmath import sqrt
 

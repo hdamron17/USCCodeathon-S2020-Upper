@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from sympy.solvers import solve
 from sympy import Symbol, And, Or, Eq, diff, lambdify
 from sympy.plotting import plot, plot_implicit
