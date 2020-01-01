@@ -25,7 +25,7 @@ N_i N_j ...
 ## Constraints
 
 $$ 2 \leq n \leq 250 $$
-$$ 1 \leq m,k \leq 100000 $$
+$$ 1 \leq m,k \leq 1000000 $$
 $$ 1 \leq dist_ij \leq 100 $$
 
 ## Output

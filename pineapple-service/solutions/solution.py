@@ -53,10 +53,14 @@ if __name__ == "__main__":
 
     # Make Adjacency Matrix
     graph = [[None for _ in range(n)] for _ in range(n)]
+    for i in range(n):
+        graph[i][i] = 0
     makeGraph(nodes, edges, graph)
+    print(graph)
 
     # Make precomputed Dijkstras Matrix
     efficientGraph = [dijkstras(graph, i) for i in range(n)]
+    print(efficientGraph)
 
     # Calculate Costs
     cost = 0

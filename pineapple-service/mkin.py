@@ -9,7 +9,7 @@ def randString():
     return ''.join([random.choice(string.ascii_letters + string.digits) for n in range(l)])
 
 def randWeight(min_, max_):
-    k = 1
+    k = 0.5
     if random.random() < k:
         return randint(min_, max_)
     return None
@@ -25,13 +25,18 @@ graph = [[randWeight(1, 100) if i != j else 0 for i in range(n)] for j in range(
 
 # merge with a tree
 tree = [i for i in range(n)]
+shuffle(tree)
 tree = tree + [tree[0]]
 prev = tree[0]
 for next_ in tree:
-    if not graph[prev][next_]:
+    if not graph[prev][next_] == None:
         graph[prev][next_] = randint(50,100)
-        graph[next_][prev] = randint(50, 100)
+    if not graph[prev][next_] == None:
+        graph[next_][prev] = randint(50,100)
     prev = next_
+
+for i in range(n):
+    graph[i][i] = 0
 
 # print([dijkstras(graph, i) for i in range(n)])
 
