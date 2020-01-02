@@ -19,7 +19,7 @@ N_a N_b dist_ab
 .
 .
 .
-N_i N_j ...
+N_i N_j ... N_k
 ```
 
 ## Constraints
