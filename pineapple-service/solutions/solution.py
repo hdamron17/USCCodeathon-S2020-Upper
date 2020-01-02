@@ -20,24 +20,20 @@ def makeGraph(nodes, edges, graph):
 
 def dijkstras(graph, source):
     n = len(graph)
-    q = [i for i in range(n)]
-    dist = [INF for _ in range(n)]
+    visited = [False for i in range(n)]
+    tovisit = [source]
+    dist = [INF for i in range(n)]
     dist[source] = 0
-    while False in q:
-        # Get minimum dist source -> u
-        min_ = INF
-        u = -1
-        for node in q:
-            if dist[node] < min_:
-                min_ = dist[node]
-                u = node
-        if u == -1: break # Dead path
-        q.remove(u)
-        for node in q:
-            if graph[u][node] != None:
-                alt = dist[u] + graph[u][node]
-                if alt < dist[node]:
-                    dist[node] = alt
+    while len(tovisit) > 0:
+        u = tovisit.pop()
+        if (visited[u]):
+            continue
+        visited[u] = True
+        for i in range(n):
+            if graph[u][i]:
+                tovisit.append(i)
+                if dist[i] > graph[u][i] + dist[u]:
+                    dist[i] = graph[u][i] + dist[u]
     return dist
 
 if __name__ == "__main__":
@@ -56,11 +52,11 @@ if __name__ == "__main__":
     for i in range(n):
         graph[i][i] = 0
     makeGraph(nodes, edges, graph)
-    print(graph)
+    # print(graph)
 
     # Make precomputed Dijkstras Matrix
     efficientGraph = [dijkstras(graph, i) for i in range(n)]
-    print(efficientGraph)
+    # print(efficientGraph)
 
     # Calculate Costs
     cost = 0
