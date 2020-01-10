@@ -7,7 +7,8 @@ Help her give at least one student the right grade.
 
 Given a stack of $n$ papers, find the minimum number of tries Dr. Girardi will
 need before she will be sure that at least one of the papers is in the proper
-position in the stack.
+position in the stack. A try is one ordering of papers;
+every new ordering counts as a different try.
 
 ## Input Format
 
