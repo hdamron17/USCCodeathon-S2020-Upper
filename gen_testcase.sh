@@ -29,9 +29,9 @@ INPUT_FILE="./input/input$1.txt"
 OUTPUT_FILE="./output/output$1.txt"
 
 if [ -e "$INPUT_FILE" ] || [ -e "$OUTPUT_FILE" ]; then
-	echo "ERROR: '$INPUT_FILE' or "$OUTPUT_FILE" exists"
+	echo "ERROR: '$INPUT_FILE' or '$OUTPUT_FILE' exists"
 	printf "Overwrite? y/[n] "
-	read force
+	read -r force
 	[ "$force" = y ] && rm -f "$INPUT_FILE" "$OUTPUT_FILE" || exit 1
 fi
 
