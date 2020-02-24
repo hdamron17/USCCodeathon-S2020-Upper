@@ -1,7 +1,7 @@
 # USC ACM Upper Division Codeathon Spring 2020
 
 * To add a defined test case, just use `git add -f input/sampleinput`.
-* Try to follow the style listed below, however, any style is fine.
+* Try to follow the style listed below, however, any style is fine.    
 myProblem  
 ├── input  
 │   ├── input0.txt  
