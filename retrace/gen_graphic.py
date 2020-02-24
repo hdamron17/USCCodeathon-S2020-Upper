@@ -30,28 +30,27 @@ def startnode(p, red=False):
       \node[fill,state,minimum size=0,accepting%s] (c0) at (%d,%d) {};
 ''' % (",red" if red else "", p[0], p[1])
 
-def arrow(i, p, red=False):
-    redstr = ",red" if red else ""
+def arrow(i, p, red_arrow=False, red_node=False):
+    red = lambda b: ",red" if b else ""
     return r'''
       \node[fill,state,minimum size=0%s] (c%d) at (%d,%d) {};
       \draw[-stealth%s] (c%d) -- (c%d);
-''' % (redstr, i, p[0], p[1], redstr, i-1, i)
+''' % (red(red_node), i, p[0], p[1], red(red_node), i-1, i)
 
 def graphic(ds):
     path = ds2path(ds)
     xshift = -min(map(lambda xy: xy[0], path))
     yshift = -min(map(lambda xy: xy[1], path))
-    xmax = abs(max(map(lambda xy: xy[0], path)) + xshift)
-    ymax = abs(max(map(lambda xy: xy[1], path)) + yshift)
+    xlen = max(map(lambda xy: xy[0], path)) + xshift
+    ylen = max(map(lambda xy: xy[1], path)) + yshift
 
     _, start, end = findLongestPalindromicString(path, debug=True)
 
     arrows = []
-    for i, p in enumerate(path[1:]):
-        redbool = start <= i < end  # gives you wings
-        arrows.append(startnode(p, redbool) if i == 0 else arrow(i, p, redbool))
+    for i, p in enumerate(path):
+        arrows.append(startnode(p, start == i) if i == 0 else arrow(i, p, start <= i < end, start < i <= end))
 
-    return graphic_text(xmax, ymax, xshift, yshift, "\n".join(arrows))
+    return graphic_text(xlen, ylen, xshift, yshift, "\n".join(arrows))
 
 def png_graphic(i):
     os.system('mkdir -p tex fig')
