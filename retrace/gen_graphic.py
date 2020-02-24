@@ -45,6 +45,8 @@ def graphic(ds):
     ylen = max(map(lambda xy: xy[1], path)) + yshift
 
     _, start, end = findLongestPalindromicString(path, debug=True)
+    if start == end:
+        start = end = 0  # For some reason it ignores first
 
     arrows = []
     for i, p in enumerate(path):
