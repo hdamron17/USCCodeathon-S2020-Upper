@@ -2,9 +2,11 @@
 
 import random
 import time
+import os
 from solution import *
 
-samples = ["frflffrrfflffrfrfff",
+samples = ["fffrffllfflfrf",
+           "frflffrrfflffrfrfff",
            "ffffffffrffffffrff"]
 
 def randomturns(weight, n=4, straight=True):
@@ -66,9 +68,9 @@ if __name__ == "__main__":
         print("Sample %0d (length %d -> %d) in %.6f seconds" % (i, len(sample), r, t1 - t0))
         # TODO add brute force for small inputs
 
+        os.system("mkdir -p testcases/input testcases/output")
         with open(ifname, 'w+') as ifile, open(ofname, 'w+') as ofile:
-            ifile.write(sample + '\n')
+            ifile.write("%d\n%s\n" % (len(sample), sample))
             ofile.write(str(r) + '\n')
 
-    import os
     os.system("zip -r retrace-testcases.zip testcases")

@@ -4,7 +4,7 @@
 # Longest palindrome substring algorithm modified from
 # https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-3-2/
 
-def findLongestPalindromicString(text):
+def findLongestPalindromicString(text, debug=False):
     N = len(text)
     if N == 0:
         return
@@ -62,7 +62,10 @@ def findLongestPalindromicString(text):
     # print("%d " % L[i])
     start = (maxLPSCenterPosition - maxLPSLength) // 2
     end = start + maxLPSLength - 1
-    return text[start:end+1]
+    if debug:
+        return text[start:end+1], start, end
+    else:
+        return text[start:end+1]
 
 # Converts command sequence to positions
 vel_cycle = [(0,1), (1,0), (0,-1), (-1,0)]
@@ -75,7 +78,7 @@ def drive(cmd, pos, vel):
         inew = (i + (1 if cmd == 'r' else -1)) % len(vel_cycle)
         return pos, vel_cycle[inew]
 
-def solve(ds):
+def ds2path(ds):
     pos = (0,0)
     vel = (0,1)
     path = [pos]
@@ -83,8 +86,12 @@ def solve(ds):
         pos, vel = drive(d, pos, vel)
         if d == 'f':
             path.append(pos)
+    return path
+
+def solve(ds):
+    path = ds2path(ds)
     retrace = findLongestPalindromicString(path)
-    return (len(retrace) + 1) // 2
+    return (len(retrace) + 1) // 2  # TODO make this the right measurement
 
 if __name__ == "__main__":
     n = int(input())
