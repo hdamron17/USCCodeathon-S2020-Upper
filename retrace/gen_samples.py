@@ -4,7 +4,8 @@ import random
 import time
 from solution import *
 
-samples = ["frflffrrfflffrfrfff",
+samples = ["fffrffllfflfrf",
+           "frflffrrfflffrfrfff",
            "ffffffffrffffffrff"]
 
 def randomturns(weight, n=4, straight=True):
@@ -67,7 +68,7 @@ if __name__ == "__main__":
         # TODO add brute force for small inputs
 
         with open(ifname, 'w+') as ifile, open(ofname, 'w+') as ofile:
-            ifile.write(sample + '\n')
+            ifile.write("%d\n%s\n" % (len(sample), sample))
             ofile.write(str(r) + '\n')
 
     import os
