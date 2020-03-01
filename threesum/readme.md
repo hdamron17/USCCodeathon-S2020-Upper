@@ -35,7 +35,7 @@ Print the number of unique combinations of xenos number that can result in the c
 ## Sample Input 1
 
 ```
-5
+7
 0
 -2 1 -1 2 0 1 -1
 ```
